@@ -1,0 +1,418 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Application PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Application connector="sailpoint.connector.JDBCConnector" created="1600795772687" featuresString="DISCOVER_SCHEMA, PROVISIONING, SYNC_PROVISIONING, DIRECT_PERMISSIONS" icon="databaseIcon" id="0a31299174b11d7c8174b6dd070e095d" modified="1600798304314" name="Manhattan TLM Cycle3 – QA Phase 2" profileClass="" type="JDBC">
+  <Attributes>
+    <Map>
+      <entry key="AccountCertificationLevel" value="Never"/>
+      <entry key="EntitlementCertificationLevel" value="Never"/>
+      <entry key="Group.SQL" value="SELECT  IDM_TYPE AS &quot;Type&quot;, VALUE AS &quot;Role&quot;,NAME AS &quot;Display Name&quot; FROM MIF.IDM_USER_GROUPS&#xD;&#xA;WHERE APPLICATION_NAME=&apos;TLM&apos; AND IDM_TYPE=&apos;Role&apos;&#xD;&#xA;"/>
+      <entry key="Group.aggregationMode">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="Group.deltaTable"/>
+      <entry key="Group.driverClass" value="oracle.jdbc.driver.OracleDriver"/>
+      <entry key="Group.getDeltaSQL"/>
+      <entry key="Group.getDirectPermObjectSQL"/>
+      <entry key="Group.getObjectSQL"/>
+      <entry key="Group.isPermissionEnabled">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="Group.mergeRows">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="Group.password" value="1:QHDlbi6OdTA818jIkKr1kA=="/>
+      <entry key="Group.url" value="jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=wms100qdb01.cardinalhealth.net)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=wms100q)))"/>
+      <entry key="Group.useExecuteQuery">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="Group.useStoredProcedureDelta">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="Group.useStoredProcedureDirectPermission">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="Group.useStoredProcedureGetObject">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="Group.useStoredProcedureSqlStmt">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="Group.user" value="IDM"/>
+      <entry key="SQL" value="SELECT DU.IDM_USER_NAME AS &quot;UID&quot;, DU.CORPORATE_USER_NAME AS &quot;User Logon&quot;, DU.FIRST_NAME AS &quot;First Name&quot;, DU.MIDDLE_NAME AS &quot;Middle Name&quot;, DU.LAST_NAME AS &quot;Last Name&quot;,DU.COMPANY_NAME AS &quot;Company&quot;, DU.PHONE AS &quot;Business Phone&quot;, DU.ADDRESS_1 AS &quot;Address 1&quot;, DU.ADDRESS_2 AS &quot;Address 2&quot;, DU.CITY AS &quot;City&quot;, DU.STATE_PROV AS &quot;State&quot;, DU.POSTAL_CODE AS &quot;Zip Code&quot;, DU.COUNTRY AS &quot;Country&quot;, DU.EMAIL AS &quot;Email&quot;,&#xD;&#xA;DA.FACILITY_ALIAS_ID AS &quot;DC&quot;, DA.ROLE_NAME AS &quot;Role_name&quot;,UA.SYSTEM_ADMIN_FLAG AS &quot;System Admin&quot;, UA.CORP_ADMIN_FLAG AS &quot;Corp Admin&quot;, UA.LAST_LOGIN_DATE_TIME AS &quot;Last Logon&quot;, DA.REGION_NAME AS &quot;Region&quot;,&#xD;&#xA;DA.Created_Date_Time AS &quot;Created Date&quot;, DA.MODIFIED_DATE_TIME AS &quot;Modified Date&quot;&#xD;&#xA;FROM MIF.IDM_USER DU&#xD;&#xA;LEFT OUTER JOIN MIF.IDM_USER_APP UA&#xD;&#xA;ON UA.IDM_USER_NAME = DU.IDM_USER_NAME&#xD;&#xA;LEFT OUTER JOIN MIF.IDM_USER_APP_DATA_ACCESS DA&#xD;&#xA;ON UA.IDM_USER_NAME = DA.IDM_USER_NAME AND UA.FACILITY_ALIAS_ID = DA.FACILITY_ALIAS_ID&#xD;&#xA;WHERE UA.IDM_USER_STATUS=&apos;Enabled&apos; AND UA.Application_Name=&apos;TLM&apos;&#xD;&#xA;ORDER BY DU.IDM_USER_NAME"/>
+      <entry key="accessRequestGroup" value="Manhattan TLM Administrator Role"/>
+      <entry key="accountCertificationLevel" value="Never"/>
+      <entry key="accountCertifierType" value="None"/>
+      <entry key="acctAggregationEnd">
+        <value>
+          <Date>1600798304294</Date>
+        </value>
+      </entry>
+      <entry key="acctAggregationStart">
+        <value>
+          <Date>1600798176246</Date>
+        </value>
+      </entry>
+      <entry key="afterProvisioningRule"/>
+      <entry key="aggregationMode">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="beforeProvisioningRule"/>
+      <entry key="buildMapRule" value="Build Map - Manhattan TLM"/>
+      <entry key="compositeDefinition"/>
+      <entry key="defaultApprovalRedirect" value="IDCERT"/>
+      <entry key="deltaTable"/>
+      <entry key="disableOrderingCheck" value="true"/>
+      <entry key="driverClass" value="oracle.jdbc.driver.OracleDriver"/>
+      <entry key="entitlementCertificationLevel" value="Never"/>
+      <entry key="excludeUncorrelatedAccountProcess">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="excludeUnprocessedTerminationReport">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="getDeltaSQL"/>
+      <entry key="getObjectSQL" value="SELECT DU.IDM_USER_NAME AS &quot;UID&quot;, DU.CORPORATE_USER_NAME AS &quot;User Logon&quot;, DU.FIRST_NAME AS &quot;First Name&quot;, DU.MIDDLE_NAME AS &quot;Middle Name&quot;, DU.LAST_NAME AS &quot;Last Name&quot;,DU.COMPANY_NAME AS &quot;Company&quot;, DU.PHONE AS &quot;Business Phone&quot;, DU.ADDRESS_1 AS &quot;Address 1&quot;, DU.ADDRESS_2 AS &quot;Address 2&quot;, DU.CITY AS &quot;City&quot;, DU.STATE_PROV AS &quot;State&quot;, DU.POSTAL_CODE AS &quot;Zip Code&quot;, DU.COUNTRY AS &quot;Country&quot;, DU.EMAIL AS &quot;Email&quot;,&#xD;&#xA;DA.FACILITY_ALIAS_ID AS &quot;DC&quot;, DA.ROLE_NAME AS &quot;Role_name&quot;,UA.SYSTEM_ADMIN_FLAG AS &quot;System Admin&quot;, UA.CORP_ADMIN_FLAG AS &quot;Corp Admin&quot;, UA.LAST_LOGIN_DATE_TIME AS &quot;Last Logon&quot;, DA.REGION_NAME AS &quot;Region&quot;,&#xD;&#xA;DA.Created_Date_Time AS &quot;Created Date&quot;, DA.MODIFIED_DATE_TIME AS &quot;Modified Date&quot;&#xD;&#xA;FROM MIF.IDM_USER DU&#xD;&#xA;LEFT OUTER JOIN MIF.IDM_USER_APP UA&#xD;&#xA;ON UA.IDM_USER_NAME = DU.IDM_USER_NAME&#xD;&#xA;LEFT OUTER JOIN MIF.IDM_USER_APP_DATA_ACCESS DA&#xD;&#xA;ON UA.IDM_USER_NAME = DA.IDM_USER_NAME AND UA.FACILITY_ALIAS_ID = DA.FACILITY_ALIAS_ID&#xD;&#xA;WHERE UA.IDM_USER_STATUS=&apos;Enabled&apos; AND UA.Application_Name=&apos;TLM&apos; AND DU.IDM_USER_NAME=&apos;$(identity)&apos;&#xD;&#xA;ORDER BY DU.IDM_USER_NAME"/>
+      <entry key="indexColumns">
+        <value>
+          <List>
+            <String>UID</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="isNonProdApplication">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="isPermissionEnabled">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="jdbcCreateProvisioningRule" value="CreateManhattanUser"/>
+      <entry key="jdbcDeleteProvisioningRule" value="DeleteManhattanUser"/>
+      <entry key="jdbcDisableProvisioningRule" value="DisableManhattanUser"/>
+      <entry key="jdbcModifyProvisioningRule" value="UpdateManhattanUser"/>
+      <entry key="mergeColumns">
+        <value>
+          <List>
+            <String>Role</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="mergeRows">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="nativeChangeDetectionAttributeScope" value="entitlements"/>
+      <entry key="nativeChangeDetectionAttributes"/>
+      <entry key="nativeChangeDetectionEnabled">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="nativeChangeDetectionOperations"/>
+      <entry key="partitionMode">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="partitionStatements"/>
+      <entry key="password" value="1:ACP:OtBLlTuSGu14QU1WHmHFM17uD3WsXNLOzeqEj+se4o8="/>
+      <entry key="provisionRule" value="operationRule"/>
+      <entry key="reportingGroup" value="Manhattan TLM"/>
+      <entry key="status" value="Active - Not Certified"/>
+      <entry key="sysDescriptions">
+        <value>
+          <Map>
+            <entry key="en_US"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="templateApplication" value="JDBC Template"/>
+      <entry key="testConnSQL"/>
+      <entry key="unlinkedAccountInclusion">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="url" value="jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=wms100qdb01.cardinalhealth.net)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=wms100q))) "/>
+      <entry key="useExecuteQuery">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureDelta">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureDirectPermission">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureGetObject">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="useStoredProcedurePartition">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureSqlStmt">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureTestConn">
+        <value>
+          <Boolean></Boolean>
+        </value>
+      </entry>
+      <entry key="user" value="IDM"/>
+    </Map>
+  </Attributes>
+  <CorrelationRule>
+    <Reference class="sailpoint.object.Rule" id="8ab1a6d5702f94d4017043cd771239f3" name="Correlation - Manhattan"/>
+  </CorrelationRule>
+  <ManagedAttributeCustomizationRule>
+    <Reference class="sailpoint.object.Rule" id="2174741a5da8ce1d015da8cec13e0015" name="ManhattanEntitlementCustomizationRule"/>
+  </ManagedAttributeCustomizationRule>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" id="2174741a5da8ce1d015da8d28ce505f0" name="Manhattan TLM"/>
+  </Owner>
+  <ProvisioningForms>
+    <Form name="Create Manhattan TLM User" objectType="account" type="Create">
+      <Attributes>
+        <Map>
+          <entry key="pageTitle" value="Create Manhattan TLM User"/>
+        </Map>
+      </Attributes>
+      <Description>Provisioning Policy to create user for Manhattan TLM Application</Description>
+      <Section>
+        <Field displayName="UID" filterString="" name="UID" required="true" type="string">
+          <RuleRef>
+            <Reference class="sailpoint.object.Rule" id="2174741a5da8ce1d015da8cecc4b0029" name="CAH_Rule_IIQ_getUID"/>
+          </RuleRef>
+        </Field>
+        <Field displayName="Enterprise ID" name="User Logon" required="true" type="string">
+          <RuleRef>
+            <Reference class="sailpoint.object.Rule" id="8a9188f25fc025b60160801eb8e31779" name="CAH_Rule_IIQ_Manhattan_getEnterpriseID"/>
+          </RuleRef>
+        </Field>
+        <Field displayName="First Name" filterString="" name="First Name" required="true" type="string">
+          <RuleRef>
+            <Reference class="sailpoint.object.Rule" id="2174741a5da8ce1d015da8cec8820023" name="CAH_Rule_IIQ_getFirstName"/>
+          </RuleRef>
+        </Field>
+        <Field displayName="Middle Name" filterString="" name="Middle Name" type="string">
+          <Script>
+            <Source>
+				String identityMiddleName =  identity.getAttribute("middleName");
+				if(identityMiddleName != null){
+					 if (identityMiddleName.length() > 5) {
+							identityMiddleName =  identityMiddleName.substring(0,5);
+							return  identityMiddleName;
+					  }
+				 return  identityMiddleName;
+				 }
+				 return  identityMiddleName;
+			</Source>
+          </Script>
+        </Field>
+        <Field displayName="Last Name" filterString="" name="Last Name" required="true" type="string">
+          <RuleRef>
+            <Reference class="sailpoint.object.Rule" id="2174741a5da8ce1d015da8cec9ea0025" name="CAH_Rule_IIQ_getLastName"/>
+          </RuleRef>
+        </Field>
+        <Field displayName="Business Phone" filterString="" name="Business Phone" type="string">
+          <Script>
+            <Source>
+				String phone = identity.getAttribute("telephoneNumber");
+				String defaultPhone = "555-555-5555";
+				if(phone != null){
+				  return phone;
+				} else{
+				  return defaultPhone;
+				}
+			</Source>
+          </Script>
+        </Field>
+        <Field displayName="Address 1" filterString="" name="Address 1" type="string">
+          <RuleRef>
+            <Reference class="sailpoint.object.Rule" id="2174741a5da8ce1d015da8cecaa50026" name="CAH_Rule_IIQ_getOfficeAddress1"/>
+          </RuleRef>
+        </Field>
+        <Field displayName="Address 2" filterString="" name="Address 2" type="string">
+          <RuleRef>
+            <Reference class="sailpoint.object.Rule" id="2174741a5da8ce1d015da8cecb130027" name="CAH_Rule_IIQ_getOfficeAddress2"/>
+          </RuleRef>
+        </Field>
+        <Field displayName="City" filterString="" name="City" type="string">
+          <RuleRef>
+            <Reference class="sailpoint.object.Rule" id="2174741a5da8ce1d015da8cec6db0020" name="CAH_Rule_IIQ_getCity"/>
+          </RuleRef>
+        </Field>
+        <Field displayName="State" filterString="" name="State" type="string">
+          <RuleRef>
+            <Reference class="sailpoint.object.Rule" id="2174741a5da8ce1d015da8cecbaf0028" name="CAH_Rule_IIQ_getState"/>
+          </RuleRef>
+        </Field>
+        <Field displayName="Zip Code" filterString="" name="Zip Code" type="string">
+          <RuleRef>
+            <Reference class="sailpoint.object.Rule" id="2174741a5da8ce1d015da8cec92e0024" name="CAH_Rule_IIQ_getPostalCode"/>
+          </RuleRef>
+        </Field>
+        <Field displayName="Country" filterString="" name="Country" type="string">
+          <Script>
+            <Source>
+				String country = identity.getAttribute("country");
+				String defaultCountry = "USA";
+				if(country != null){
+				  return country;
+				} else{
+				  return defaultCountry;
+				}
+			</Source>
+          </Script>
+        </Field>
+        <Field displayName="Email" filterString="" name="Email" type="string">
+          <RuleRef>
+            <Reference class="sailpoint.object.Rule" id="2174741a5da8ce1d015da8cec7580021" name="CAH_Rule_IIQ_getEmail"/>
+          </RuleRef>
+        </Field>
+        <Field displayName="Application" filterString="" name="Application" type="string" value="TLM"/>
+        <Field displayName="Company" filterString="" name="Company" type="string">
+          <Script>
+            <Source>
+				String extCompany = identity.getAttribute("cahextCompanyName");
+				String defaultCompany = "Cardinal Health";
+				String employeeType = identity.getAttribute("employeeType");
+				if(employeeType != null){
+					if(employeeType.equals("3PL Supplier") || employeeType.equals("Pharma Supplier")){
+						if(extCompany != null){
+							return extCompany;
+						} else{
+							return defaultCompany;
+						}
+					} else{
+						return defaultCompany;
+					}
+				} else{
+				  return defaultCompany;
+				}
+			</Source>
+          </Script>
+        </Field>
+      </Section>
+    </Form>
+  </ProvisioningForms>
+  <Remediators>
+    <Reference class="sailpoint.object.Identity" id="2174741a5da8ce1d015da8d28ce505f0" name="Manhattan TLM"/>
+  </Remediators>
+  <Schemas>
+    <Schema created="1600795772688" displayAttribute="User Logon" id="0a31299174b11d7c8174b6dd070f095f" identityAttribute="UID" instanceAttribute="" modified="1600795967888" nativeObjectType="account" objectType="account" permissionsRemediationModificationType="None">
+      <AttributeDefinition name="UID" type="string">
+        <Description></Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="User Logon" type="string">
+        <Description></Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="First Name" type="string">
+        <Description></Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="Middle Name" type="string">
+        <Description></Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="Last Name" type="string">
+        <Description></Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="Business Phone" type="string">
+        <Description></Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="Address 1" type="string">
+        <Description></Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="Address 2" type="string">
+        <Description></Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="City" type="string">
+        <Description></Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="State" type="string">
+        <Description></Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="Zip Code" type="string">
+        <Description></Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="Country" type="string">
+        <Description></Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="Email" type="string">
+        <Description></Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="Company" type="string">
+        <Description></Description>
+      </AttributeDefinition>
+      <AttributeDefinition entitlement="true" managed="true" minable="true" multi="true" name="Role" schemaObjectType="Group" type="string">
+        <Description></Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="Last Logon" type="string">
+        <Description></Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="Created Date" type="string">
+        <Description></Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="Modified Date" type="string">
+        <Description></Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="inactive" type="string">
+        <Description></Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="service" type="string">
+        <Description></Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="privileged" type="string">
+        <Description></Description>
+      </AttributeDefinition>
+    </Schema>
+    <Schema aggregationType="group" created="1589583978367" descriptionAttribute="" displayAttribute="Display Name" id="0a31299174b11d7c8174b6dd07100960" identityAttribute="Role" instanceAttribute="" modified="1600795967888" nativeObjectType="group" objectType="Group" permissionsRemediationModificationType="None">
+      <AttributeDefinition name="Type" type="string">
+        <Description></Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="Role" type="string">
+        <Description></Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="Display Name" type="string">
+        <Description></Description>
+      </AttributeDefinition>
+    </Schema>
+  </Schemas>
+  <ApplicationScorecard created="1600795772686" id="0a31299174b11d7c8174b6dd070e095e" modified="1600795967888"/>
+</Application>
